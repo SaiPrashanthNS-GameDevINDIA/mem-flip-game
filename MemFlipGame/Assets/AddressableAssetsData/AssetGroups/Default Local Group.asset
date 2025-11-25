@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a8c09636f19061f4da5d2a93e207f76a
+  m_SerializeEntries:
+  - m_GUID: 683d55417ccbcba479dc84edff0e5941
+    m_Address: Assets/ScriptableObjects/Cards/Apple.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3c01c5311b0dc7644a62af3ec24776bd
+    m_Address: Assets/ScriptableObjects/Cards/Ball.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f25ca58572d3c84479c530d806348dd5
+    m_Address: Assets/ScriptableObjects/Cards/Bat.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0bee8ed5016693e4f887505298fa7fa5
+    m_Address: Assets/ScriptableObjects/Cards/Hat.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 563b23dd3d9e9f74fa910727e87dfba9
+    m_Address: Assets/ScriptableObjects/Cards/Cat.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0f79da10b2e8760489f30a26a65594cb
+    m_Address: Assets/ScriptableObjects/Cards/Shoe.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9d32b2e6c55a9f24986dc9dc13e337a2
+    m_Address: Assets/ScriptableObjects/Cards/Star.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ba53a73a86372cb459a2d067fd032d2a
+    m_Address: Assets/ScriptableObjects/Cards/Cup.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d504ad271489422429f04e73ae5f3cfb
+    m_Address: Assets/ScriptableObjects/Cards/Car.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7805f40007443bb409347f81a65d737f
+    m_Address: Assets/ScriptableObjects/Cards/Bus.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 9081529989877fc4cb61fd35231fe17d, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 42e46454e14c344439dbf0784f5521b4, type: 2}
+    - {fileID: 11400000, guid: 04f50c75b6d8d1b46b122e607afed544, type: 2}
