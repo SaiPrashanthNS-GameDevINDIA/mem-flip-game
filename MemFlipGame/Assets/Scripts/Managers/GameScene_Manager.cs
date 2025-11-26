@@ -82,6 +82,8 @@ public class GameScene_Manager : MonoBehaviour,IEventBus_Connector
 
     public void RestartGame()
     {
+        Time.timeScale = 1f;
+
         SceneManager.LoadScene("GameScene");
     }
     

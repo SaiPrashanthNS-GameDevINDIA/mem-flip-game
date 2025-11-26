@@ -15,7 +15,6 @@ public class Level_Manager : MonoBehaviour,IEventBus_Connector
     public void InitEventBus(IEventBus eventBus)
     {
         eventBusRef = eventBus;
-        Debug.Log("Level Manager Initiated");
         eventBusRef?.Subscribe<GameplayEvent_LevelStarted>(HideCards);
         eventBusRef?.Subscribe<GameplayEvent_CardsSpawnComplete>(GetSpawnedCards);
         eventBusRef?.Subscribe<GameplayEvent_CardClicked>(CheckClickedCards);

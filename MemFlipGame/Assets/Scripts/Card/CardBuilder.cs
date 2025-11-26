@@ -29,7 +29,6 @@ public class CardBuilder : MonoBehaviour,IEventBus_Connector
     
     // Card Catalog object loaded from the asset reference using GUID AssetReferenceT
     private CardCatalog_ScriptableObject cardCatalog_SO_Reference;
-    [SerializeField] private bool isInitialized;
 
 
     [Space(20)] [SerializeField] private GameObject canvasRef;
@@ -45,8 +44,6 @@ public class CardBuilder : MonoBehaviour,IEventBus_Connector
 
         if (cardCatalog_SO_Reference != null)
         {
-            isInitialized = true;
-            
             
             int rowCount = PlayerPrefs.GetInt("RowCount");
             int columnCount = PlayerPrefs.GetInt("ColumnCount");
