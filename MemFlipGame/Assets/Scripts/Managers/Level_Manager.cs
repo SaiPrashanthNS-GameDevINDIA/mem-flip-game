@@ -8,7 +8,10 @@ public class Level_Manager : MonoBehaviour,IEventBus_Connector
 
     [SerializeField] private Transform cardSpawn_ParentTransform;
     [SerializeField] private List<GameObject> spawnedCards = new List<GameObject>();
-    
+
+    [SerializeField] private int totalCardCount;
+    [SerializeField] private int correctAnswerCount;
+
     public void InitEventBus(IEventBus eventBus)
     {
         eventBusRef = eventBus;
@@ -57,7 +60,14 @@ public class Level_Manager : MonoBehaviour,IEventBus_Connector
                 
                 Invoke(nameof(CorrectSequence_Activated),0.1f);
                 Invoke(nameof(ResetClickCount),0.1f);
+                correctAnswerCount++;
+
                 
+                // All the cards tapped correctly, then level ended
+                if (correctAnswerCount == totalCardCount / 2)
+                {
+                    eventBusRef.Publish(new GameplayEvent_LevelEnded());
+                }
 
             }
             else
@@ -105,6 +115,8 @@ public class Level_Manager : MonoBehaviour,IEventBus_Connector
         {
             spawnedCards.Add(cardSpawn_ParentTransform.GetChild(i).gameObject);
         }
+        
+        totalCardCount = spawnedCards.Count;
     }
     
     // Hide the cards

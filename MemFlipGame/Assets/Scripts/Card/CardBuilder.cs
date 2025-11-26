@@ -58,6 +58,7 @@ public class CardBuilder : MonoBehaviour,IEventBus_Connector
             {
                 cardCount++;
             }
+            PlayerPrefs.SetInt("CardCount",cardCount);
             
             spawnCards(cardCount/2);
         }

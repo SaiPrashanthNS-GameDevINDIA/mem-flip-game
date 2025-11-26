@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameScene_Manager : MonoBehaviour,IEventBus_Connector
 {
     [SerializeField] private CanvasGroup pauseMenuUI;
-    
+    [SerializeField] private CanvasGroup levelCompleteUI;
+
     [SerializeField] private TextMeshProUGUI gameStartTimer_Text;
 
     private IEventBus eventBusRef;
@@ -15,6 +16,7 @@ public class GameScene_Manager : MonoBehaviour,IEventBus_Connector
     public void InitEventBus(IEventBus eventBus)
     {
         eventBusRef = eventBus;
+        eventBusRef.Subscribe<GameplayEvent_LevelEnded>(LevelComplete_UI);
     }
     private void OnDestroy()
     {
@@ -57,8 +59,11 @@ public class GameScene_Manager : MonoBehaviour,IEventBus_Connector
             yield break;
 
     }
-    
-    
+
+    void LevelComplete_UI(GameplayEvent_LevelEnded x)
+    {
+        levelCompleteUI.gameObject.SetActive(true);
+    }
 
     public void PauseGame()
     {
