@@ -3,9 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 using UnityEngine.AddressableAssets;
+using UnityEngine.UI;
 
-public class CardBuilder : MonoBehaviour
+public class CardBuilder : MonoBehaviour,IEventBus_Connector
 {
+    private IEventBus eventBusRef;
+
+    public void InitEventBus(IEventBus eventBus)
+    {
+        eventBusRef = eventBus;
+    }
+    
+    
     // TODO
     //  Card Prefab - to be changed in to addressabele in future  
     [SerializeField] private GameObject cardPrefab;
@@ -102,6 +111,9 @@ public class CardBuilder : MonoBehaviour
         cardInstance_Copy2.GetComponent<CardData>().SetCardData(cardData.cardName, cardData.cardImage);
         cardInstance.GetComponent<CardData>().SetCardData(cardData.cardName, cardData.cardImage);
         
+        cardInstance_Copy2.GetComponent<Card_Interaction>().InitEventBus(eventBusRef);
+        cardInstance.GetComponent<Card_Interaction>().InitEventBus(eventBusRef);
+        
         if( cardRef!=null)
         {        
             _asyncAddressableLoader.Release(cardRef);
@@ -115,8 +127,17 @@ public class CardBuilder : MonoBehaviour
             int randomIndex = Random.Range(0, canvasRef.transform.childCount);
             canvasRef.transform.GetChild(i).transform.SetSiblingIndex(randomIndex);
         }
+        eventBusRef?.Publish(new GameplayEvent_CardsSpawnComplete());
+        Debug.Log("ShuffleCards");
         
+        // Disable Grid Layout Group as we will be removing the cards in the game and it should not auto adjust 
+        Invoke("DisableGridLayoutGroup", 0.2f);
     }
+    void DisableGridLayoutGroup()
+    {
+        canvasRef.GetComponent<GridLayoutGroup>().enabled = false;
+    }
+    
     public void OnDestroy()
     {
         cardCatalog_GUID_Reference.ReleaseAsset();

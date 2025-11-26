@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public readonly struct GameplayEvent_CardClicked
+public readonly struct GameplayEvent_CardsSpawnComplete 
 {
     
 }

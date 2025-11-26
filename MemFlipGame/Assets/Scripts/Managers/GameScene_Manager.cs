@@ -29,13 +29,13 @@ public class GameScene_Manager : MonoBehaviour,IEventBus_Connector
 
     IEnumerator StartGame_Sequence()
     {
-
+        // Wait for timer to finish
         yield return StartCoroutine(GameStartTimer(4));
         
         // Send event - Notifying level started 
         eventBusRef?.Publish(new GameplayEvent_LevelStarted());
 
-
+        
     }
 
     

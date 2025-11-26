@@ -4,24 +4,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Card_Interaction : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class Card_Interaction : MonoBehaviour, IPointerClickHandler, IEventBus_Connector
 {
-    public void OnPointerEnter(PointerEventData eventData)
+    private IEventBus eventBusRef;
+    
+    public void InitEventBus(IEventBus eventBus)
     {
-        Debug.Log("Hover ON");
-    }
+        eventBusRef = eventBus;
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Debug.Log("Hover OFF");
     }
+    
+    
+    
+    private void OnDestroy()
+    {
+    }
+    
+    
+    
+    
+    
 
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Card Clicked via UI!");
-        
+        GetComponent<CardData>().SetCardVisibleState();
+
+        eventBusRef?.Publish(new GameplayEvent_CardClicked(this.gameObject));
     }
-    
-    
-    
+
+
+   
 }

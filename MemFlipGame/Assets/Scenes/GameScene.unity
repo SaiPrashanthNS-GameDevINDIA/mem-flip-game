@@ -949,7 +949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &553166364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1132,6 +1132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef4743fcc17e4b442a706f7fbf4519f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardSpawn_ParentTransform: {fileID: 629653881}
+  spawnedCards: []
 --- !u!4 &638080076
 Transform:
   m_ObjectHideFlags: 0
@@ -1525,6 +1527,7 @@ MonoBehaviour:
   managerReferences:
   - {fileID: 638080074}
   - {fileID: 793795768}
+  - {fileID: 553166363}
 --- !u!4 &897815143
 Transform:
   m_ObjectHideFlags: 0
@@ -1660,7 +1663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 56.1, y: -49.4}
+  m_AnchoredPosition: {x: 56.100098, y: -49.400024}
   m_SizeDelta: {x: 512, y: 512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1005740367
@@ -3234,11 +3237,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2823394506149069076, guid: ba685170fba911c459568d0c3b7ec762, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1294.3518
       objectReference: {fileID: 0}
     - target: {fileID: 2823394506149069076, guid: ba685170fba911c459568d0c3b7ec762, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -628.0425
       objectReference: {fileID: 0}
     - target: {fileID: 2823394506149069076, guid: ba685170fba911c459568d0c3b7ec762, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3255,6 +3258,10 @@ PrefabInstance:
     - target: {fileID: 2823394506149069079, guid: ba685170fba911c459568d0c3b7ec762, type: 3}
       propertyPath: m_Name
       value: Card_prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823394506149069079, guid: ba685170fba911c459568d0c3b7ec762, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba685170fba911c459568d0c3b7ec762, type: 3}
