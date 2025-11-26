@@ -41,9 +41,12 @@ public class GameScene_Manager : MonoBehaviour
     {
         Application.LoadLevel("GameScene");
     }
-
+    
     public void QuitGame()
     {
+        
+        
+        
         Application.LoadLevel("StartMenu");
 
     }

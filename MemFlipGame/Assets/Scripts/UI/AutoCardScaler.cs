@@ -14,17 +14,18 @@ public class AutoCardScaler : MonoBehaviour
 
     public void Awake()
     {
+        received_RowCount = PlayerPrefs.GetInt("RowCount");
         gridLayoutReference = GetComponent<GridLayoutGroup>();
+        SetRowLength();
     }
 
 
     [ContextMenu("Set Row Length")]
     public void SetRowLength()
     {
-        //received_RowCount = length;
         gridLayoutReference.constraintCount = received_RowCount;
 
-        float adjusted_CellSize = -12.5f * received_RowCount + 145;
+        float adjusted_CellSize = -12.5f * received_RowCount + 165;
         float adjusted_Spacing = -18.75f * received_RowCount + 237.5f;
 
         gridLayoutReference.cellSize = new Vector2(adjusted_CellSize, adjusted_CellSize);
