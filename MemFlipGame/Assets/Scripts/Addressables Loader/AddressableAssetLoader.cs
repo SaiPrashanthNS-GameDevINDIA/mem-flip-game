@@ -11,9 +11,9 @@ public class AddressableAssetLoader : IAssetLoader
     public async Task<T> Load<T>(AssetReferenceT<T> assetReference) where T : Object
     {
         if (assetReference == null)
-        {
+        {           
+            Debug.LogError("Asset Reference is null -check");
             return null; 
-            Debug.LogError("Asset Reference is null");
         }
 
         var loadTask = assetReference.LoadAssetAsync<T>();
@@ -21,8 +21,9 @@ public class AddressableAssetLoader : IAssetLoader
 
         if (loadTask.Status == AsyncOperationStatus.Failed)
         {
+            Debug.LogError("Asset Loading Failed");
             return null;
-            Debug.LogError("Asset Load Failed");
+          
         }
         
         return loadTask.Result;
